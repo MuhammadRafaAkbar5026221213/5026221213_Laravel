@@ -7,11 +7,24 @@
 </head>
 <body>
     <h1>Detail Karyawan</h1>
-    <p><strong>NIP:</strong> {{ $karyawan->NIP }}</p>
-    <p><strong>Nama:</strong> {{ $karyawan->Nama }}</p>
-    <p><strong>Pangkat:</strong> {{ $karyawan->Pangkat }}</p>
-    <p><strong>Gaji:</strong> Rp. {{ number_format($karyawan->Gaji, 0, ',', '.') }}</p>
-
+    <table border="1">
+        <tr>
+            <td>NIP</td>
+            <td>{{ $karyawan->NIP }}</td>
+        </tr>
+        <tr>
+            <td>Nama</td>
+            <td>{{ $karyawan->Nama }}</td>
+        </tr>
+        <tr>
+            <td>Pangkat</td>
+            <td>{{ $karyawan->Pangkat }}</td>
+        </tr>
+        <tr>
+            <td>Gaji</td>
+            <td>Rp {{ number_format($karyawan->Gaji, 0, ',', '.') }}</td>
+        </tr>
+    </table>
     <a href="{{ route('karyawan.index') }}">Kembali ke Daftar Karyawan</a>
 </body>
 </html>
