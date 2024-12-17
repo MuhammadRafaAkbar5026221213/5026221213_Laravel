@@ -9,6 +9,12 @@
     <a href="/blueray" class="btn btn-secondary">
         Ke Halaman Blueray
     </a>
+    <a href="/uas" class="btn btn-secondary">
+        Ke Halaman UAS
+    </a>
+    <a href="/karyawan1" class="btn btn-secondary">
+        Ke Halaman karyawan
+    </a>
 @endsection
 
 @section('konten')

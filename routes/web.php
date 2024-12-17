@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BluerayController;
+use App\Http\Controllers\UASController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\Karyawan1Controller;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,3 +43,12 @@ Route::get('/blueray/edit/{id}', [BluerayController::class, 'edit']);
 Route::post('/blueray/update', [BluerayController::class, 'update']);
 Route::get('/blueray/hapus/{id}', [BluerayController::class, 'hapus']);
 Route::get('/blueray/cari', [BluerayController::class, 'cari']);
+
+// Routes for Pagecontroller
+Route::get('/page', [PageController::class, 'incrementCounter']);
+
+// Routes for Karyawan
+Route::get('karyawan', [Karyawan1Controller::class, 'index'])->name('karyawan.index');
+Route::get('karyawan/{nip}/edit', [Karyawan1Controller::class, 'edit'])->name('karyawan.edit');
+Route::put('karyawan/{nip}', [Karyawan1Controller::class, 'update'])->name('karyawan.update');
+Route::get('karyawan/{nip}', [Karyawan1Controller::class, 'show'])->name('karyawan.show');
